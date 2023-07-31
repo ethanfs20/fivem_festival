@@ -1,48 +1,44 @@
-# DJ Festival Script for GTA V / FiveM by Ethanfs20
+# fivem_festival
 
 ## Table of Contents
-1. [Description](#description)
-2. [Features](#features)
-3. [Usage](#usage)
-4. [Installation](#installation)
-5. [Dependencies](#dependencies)
-6. [Contributing](#contributing)
-7. [License](#license)
-8. [Credits](#credits)
+- [fivem\_festival](#fivem_festival)
+  - [Table of Contents](#table-of-contents)
+  - [Description ](#description-)
+  - [Features ](#features-)
+  - [Installation ](#installation-)
+  - [Configuration ](#configuration-)
+  - [Support and Contributions ](#support-and-contributions-)
+  - [Credits ](#credits-)
+  - [License ](#license-)
 
 ## Description <a name="description"></a>
-The DJ Festival script is a resource designed for GTA V's FiveM multiplayer mod that allows players to host and participate in lively DJ festivals within the game world. This resource aims to create an interactive and immersive festival experience by providing various functionalities such as custom music emitters, radio stations, and animated NPCs.
+The fivem_festival is a resource developed by Ethan4t0r designed for GTA V's FiveM multiplayer mod that allows players to host and participate in lively DJ festivals within the game world. This resource aims to create an interactive and immersive festival experience by providing various functionalities such as custom music emitters, radio stations, and animated NPCs.
 
 ## Features <a name="features"></a>
-- **Custom Emitters**
-- **Radio Stations**
-- **DJ Booth**
-- **Pedestrian NPCs**
-- **Restricted Area**
-- **Commands**
-- **Ace Permission**
-
-## Usage <a name="usage"></a>
-To host a DJ festival, authorized players can use the following commands:
-- `/startfestival`
-- `/pausemusic`
-- `/resumemusic`
-- `/changeradio <radiostation>`
+- Custom Emitters
+- Radio Stations
+- DJ Booth
+- Pedestrian NPCs
+- Restricted Area
+- Commands
+- Ace Permission
 
 ## Installation <a name="installation"></a>
-1. Download the DJ Festival script from the GitHub repository.
+1. Download the `fivem_festival` script from the [GitHub repository](https://github.com/ethanfs20/fivem_festival).
 2. Place the script in your FiveM server's resource folder.
 3. Modify the configuration file (`config.lua`) to customize the festival settings.
 4. Ensure that players who should have access to the DJ booth have the "festival.admin" Ace permission.
 
-## Dependencies <a name="dependencies"></a>
-NA
+## Configuration <a name="configuration"></a>
+You can customize the festival settings, radio stations, and emitters by editing the `config.lua` file.
 
-## Contributing <a name="contributing"></a>
-We welcome contributions to improve and enhance the DJ Festival script. Feel free to submit issues, pull requests, or suggestions to make this resource even better.
-
-## License <a name="license"></a>
-The DJ Festival script is licensed under the [MIT License](LICENSE), allowing you to use, modify, and distribute the resource freely.
+## Support and Contributions <a name="support"></a>
+For support and questions, join our [Discord Server](https://discord.gg/BGwrmpjRyQ).
+For contributions, check out the repository on [GitHub](https://github.com/ethanfs20/fivem_festival/blob/main/README.md).
 
 ## Credits <a name="credits"></a>
-This resource was developed by Ethan4t0r
+Author: Ethan4t0r
+A special thanks to the FiveM community for the support and feedback!
+
+## License <a name="license"></a>
+This project is licensed under the [MIT License](LICENSE).

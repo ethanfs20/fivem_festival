@@ -28,7 +28,13 @@ The fivem_festival is a resource developed by Ethan4t0r designed for GTA V's Fiv
 1. Download the `fivem_festival` script from the [GitHub repository](https://github.com/ethanfs20/fivem_festival).
 2. Place the script in your FiveM server's resource folder.
 3. Modify the configuration file (`config.lua`) to customize the festival settings.
-4. Ensure that players who should have access to the DJ booth have the "festival.admin" Ace permission.
+4. Ensure that players who should have access to the DJ booth have the commands in their group or identifier:
+```
+add_ace group.admin command.changeradio allow
+add_ace group.admin command.pausemusic allow
+add_ace group.admin command.startfestival allow
+add_ace group.admin command.resumemusic allow
+```
 
 ## Configuration <a name="configuration"></a>
 You can customize the festival settings, radio stations, and emitters by editing the `config.lua` file.

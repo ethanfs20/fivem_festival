@@ -1,6 +1,5 @@
-ui = false;
-
-local Speakers = {}
+local customEmitters = {}
+local ui = false;
 
 function SpawnSpeakers(emitterCoords, heading, emitterName)
     local modelHash = GetHashKey("stt_prop_speakerstack_01a")

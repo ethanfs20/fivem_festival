@@ -15,11 +15,11 @@ AddEventHandler('setupEmitters', function(type)
         if type == "new" then
             -- Sends custom emitter data to the source only
             TriggerClientEvent("spawnCustomEmittersClient", source,
-                               Config.customEmittersData)
+                Config.customEmittersData)
         else
             -- Sends custom emitter data to all clients
             TriggerClientEvent("spawnCustomEmittersClient", -1,
-                               Config.customEmittersData)
+                Config.customEmittersData)
         end
     else
         print("Invalid player ID: " .. tostring(source))
@@ -45,7 +45,7 @@ AddEventHandler('resumeMusic', function()
     if source then
         -- Sends the new radio station to the client
         TriggerClientEvent("resumeMusicOnEmitters", -1,
-                           Config.customEmittersData)
+            Config.customEmittersData)
     else
         print("Invalid player ID: " .. tostring(source))
     end
@@ -71,85 +71,56 @@ end)
 -- Command to spawn the custom emitters at their specified coordinates (/boom)
 RegisterCommand("startfestival", function(source, args)
     local player = source
-    if IsPlayerAceAllowed(player, Config.AcePermission) then
-        if source then
-            print("Spawning custom emitters for player " .. player)
-            -- Triggers the client event to spawn custom emitters for the player
-            TriggerClientEvent("spawnCustomEmittersClient", -1,
-                               Config.customEmittersData)
-        else
-            print("Invalid player ID: " .. tostring(source))
-        end
+    if source then
+        print("Spawning custom emitters for player " .. player)
+        -- Triggers the client event to spawn custom emitters for the player
+        TriggerClientEvent("spawnCustomEmittersClient", -1,
+            Config.customEmittersData)
     else
-        print("You don't have permission to execute this command.")
+        print("Invalid player ID: " .. tostring(source))
     end
-end, false)
+end, true)
 
 -- Command to pause music
 RegisterCommand("pausemusic", function(source, args)
     local player = source
-    if IsPlayerAceAllowed(player, Config.AcePermission) then
-        if source then
-            TriggerClientEvent("pauseMusicOnEmitters", -1,
-                               Config.customEmittersData)
-        else
-            print("Invalid player ID: " .. tostring(source))
-        end
+    if source then
+        TriggerClientEvent("pauseMusicOnEmitters", -1,
+            Config.customEmittersData)
     else
-        print("You don't have permission to execute this command.")
+        print("Invalid player ID: " .. tostring(source))
     end
-end, false)
+end, true)
 
 -- Command to resume music
 RegisterCommand("resumemusic", function(source, args)
     local player = source
-    if IsPlayerAceAllowed(player, Config.AcePermission) then
-        if source then
-            TriggerClientEvent("resumeMusicOnEmitters", -1,
-                               Config.customEmittersData)
-        else
-            print("Invalid player ID: " .. tostring(source))
-        end
+    if source then
+        TriggerClientEvent("resumeMusicOnEmitters", -1,
+            Config.customEmittersData)
     else
-        print("You don't have permission to execute this command.")
+        print("Invalid player ID: " .. tostring(source))
     end
-end, false)
+end, true)
 
 -- Command to change the radio station for all emitters (/changeradio <radiostation>)
 RegisterCommand("changeradio", function(source, args)
     local player = source
-    if IsPlayerAceAllowed(player, Config.AcePermission) then
-        if source then
-            if #args == 1 then
-                local newStation = args[1]
-                if isValidStation(newStation) then
-                    -- Triggers the client event to change the radio station for all emitters
-                    TriggerClientEvent("changeRadioStationClient", -1,
-                                       newStation)
-                    print("Radio station changed to: " .. newStation)
-                else
-                    print("Invalid radio station: " .. newStation)
-                end
+    if source then
+        if #args == 1 then
+            local newStation = args[1]
+            if isValidStation(newStation) then
+                -- Triggers the client event to change the radio station for all emitters
+                TriggerClientEvent("changeRadioStationClient", -1,
+                    newStation)
+                print("Radio station changed to: " .. newStation)
             else
-                print("Usage: /changeradio <radiostation>")
+                print("Invalid radio station: " .. newStation)
             end
         else
-            print("Invalid player ID: " .. tostring(source))
+            print("Usage: /changeradio <radiostation>")
         end
     else
-        print("You don't have permission to execute this command.")
+        print("Invalid player ID: " .. tostring(source))
     end
-end, false)
-
-
--- Custom event to handle the permission check and send the result back to the client
-RegisterServerEvent('djBoothCheck')
-AddEventHandler('djBoothCheck', function()
-    local source = source
-    print('Hello')
-    if IsPlayerAceAllowed(source, Config.AcePermission) then
-        print('Hello2')
-        -- If the player has the required permission, allow them to use the DJ booth
-        TriggerClientEvent('djBoothEnter', source, true)
-    end
-end)
+end, true)

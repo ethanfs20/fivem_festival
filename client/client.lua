@@ -1,5 +1,5 @@
 local customEmitters = {}
-local ui = false;
+ui = false;
 
 function CreateCustomEmitter(emitterCoords, heading, emitterName)
     local modelHash = GetHashKey("stt_prop_speakerstack_01a")

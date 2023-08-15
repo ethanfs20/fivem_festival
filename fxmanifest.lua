@@ -5,8 +5,9 @@ author 'Ethan4t0r'
 description 'Festival script for FiveM'
 version '1.0.0'
 
-client_scripts {'shared/config.lua', 'client/client.lua', 'client/npcspawner.lua', 'client/checkpoint.lua', 'client/djbooth.lua'}
-server_scripts {'shared/config.lua', 'server/server.lua'}
+client_scripts { 'shared/config.lua', 'client/client.lua', 'client/npcspawner.lua', 'client/checkpoint.lua',
+    'client/djbooth.lua' }
+server_scripts { 'shared/config.lua', 'server/server.lua', 'server/commands.lua' }
 
 ui_page 'html/index.html'
 

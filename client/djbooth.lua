@@ -20,6 +20,7 @@ Citizen.CreateThread(function()
                 if IsControlJustReleased(0, 38) then
                     if not isPlayerInDJBooth then
                         isPlayerInDJBooth = true
+                        ui = true
 
                         RequestAnimDict(Config.djbooth.animDict)
                         while not HasAnimDictLoaded(Config.djbooth.animDict) do

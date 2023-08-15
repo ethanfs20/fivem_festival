@@ -2,27 +2,27 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Function to start the emitter
     function resumeMusic() {
-        $.post('https://festival/resumeMusic', JSON.stringify({}));  // send a message to the LUA script
+        $.post('https://qb-djs/resumeMusic', JSON.stringify({}));  // send a message to the LUA script
     }
 
     // Function to stop the emitter
     function pauseMusic() {
-        $.post('https://festival/pauseMusic', JSON.stringify({}));  // send a message to the LUA script
+        $.post('https://qb-djs/pauseMusic', JSON.stringify({}));  // send a message to the LUA script
     }
 
     // Function to start the festival
     function startFestival() {
-        $.post('https://festival/startFestival', JSON.stringify({}));  // send a message to the LUA script
+        $.post('https://qb-djs/startFestival', JSON.stringify({}));  // send a message to the LUA script
     }
 
     // Function to change the radio station for the emitter
     function changeRadioStation(station) {
-        $.post('https://festival/changeRadioStation', JSON.stringify({ station: station }));  // send a message to the LUA script
+        $.post('https://qb-djs/changeRadioStation', JSON.stringify({ station: station }));  // send a message to the LUA script
     }
 
     // Function to close the menu
     function closeMenu() {
-        $.post('https://festival/closeMenu', JSON.stringify({}));  // send a message to the LUA script
+        $.post('https://qb-djs/closeMenu', JSON.stringify({}));  // send a message to the LUA script
     }
 
     // Function to show the radio station selection

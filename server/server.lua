@@ -1,3 +1,11 @@
+local Speakers = {}
+
+function spawnProps(type)
+    if type == "Speakers" then
+        TriggerClientEvent("qb-djs:receiveSpeakers", -1)
+    end
+end
+
 -- A function to check if a radio station is valid
 function isValidStation(station)
     for i, validStation in ipairs(Config.validStations) do
@@ -6,12 +14,12 @@ function isValidStation(station)
     return false
 end
 
--- Triggered when "setupEmitters" event is called
-RegisterServerEvent('setupEmitters')
-AddEventHandler('setupEmitters', function(type)
+-- Triggered when "qb-djs:getEmitters" event is called
+RegisterNetEvent("qb-djs:getSpeakers")
+AddEventHandler("qb-djs:getSpeakers", function()
     local source = source
-    local type = type
     if source then
+<<<<<<< HEAD
         if type == "new" then
             -- Sends custom emitter data to the source only
             TriggerClientEvent("spawnCustomEmittersClient", source,
@@ -21,6 +29,9 @@ AddEventHandler('setupEmitters', function(type)
             TriggerClientEvent("spawnCustomEmittersClient", -1,
                 Config.customEmittersData)
         end
+=======
+
+>>>>>>> 72e210b047d2e282a7a0c0cab7ea24ad4e509820
     else
         print("Invalid player ID: " .. tostring(source))
     end
@@ -67,6 +78,7 @@ AddEventHandler('changeRadioStation', function(newStation)
         print("Invalid player ID: " .. tostring(source))
     end
 end)
+<<<<<<< HEAD
 
 -- Command to spawn the custom emitters at their specified coordinates (/boom)
 RegisterCommand("startfestival", function(source, args)
@@ -124,3 +136,5 @@ RegisterCommand("changeradio", function(source, args)
         print("Invalid player ID: " .. tostring(source))
     end
 end, true)
+=======
+>>>>>>> 72e210b047d2e282a7a0c0cab7ea24ad4e509820
